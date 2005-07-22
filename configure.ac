@@ -35,7 +35,8 @@ AC_PATH_PROG(UCS2ANY, ucs2any)
 AC_PATH_PROG(MKFONTSCALE, mkfontscale)
 AC_PATH_PROG(MKFONTDIR, mkfontdir)
 
-UTILFONT_MAPFILES(MAPFILES)
+PKG_CHECK_MODULES(MAPS, [fontutil])
+MAPFILES_PATH=$(pkg-config --variable=mapdir fontutil)
 AC_SUBST(MAPFILES_PATH)
 
 AC_OUTPUT([Makefile])
