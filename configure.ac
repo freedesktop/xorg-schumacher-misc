@@ -22,7 +22,7 @@ dnl
 dnl Process this file with autoconf to create configure.
 
 AC_PREREQ([2.57])
-AC_INIT(font-schumacher-misc, [7.0], [xorg@freedestkop.org], font-schumacher-misc)
+AC_INIT(font-schumacher-misc, [0.99.0], [https://bugs.freedesktop.org/enter_bug.cgi?product=xorg], font-schumacher-misc)
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
 AM_MAINTAINER_MODE
 
@@ -38,5 +38,7 @@ AC_PATH_PROG(MKFONTDIR, mkfontdir)
 PKG_CHECK_MODULES(MAPS, [fontutil])
 MAPFILES_PATH=$(pkg-config --variable=mapdir fontutil)
 AC_SUBST(MAPFILES_PATH)
+
+XORG_RELEASE_VERSION
 
 AC_OUTPUT([Makefile])
