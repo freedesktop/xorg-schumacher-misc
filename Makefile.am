@@ -186,7 +186,7 @@ SUFFIXES = .bdf .pcf.gz t.bdf \
 	@rm -f $@
 	$(UCS2ANY) $^ $(UTIL_DIR)/map-KOI8-R KOI8-R
 
-$(TRUNC_PCF_FILES): %.pcf.gz: %t.bdf
+t.bdf.pcf.gz:
 	@rm -f $@
 	$(BDFTOPCF) -t $^ | gzip > $@
 
@@ -225,6 +225,8 @@ BUILT_BDF_FILES = \
 CLEANFILES = $(font_DATA) $(TRUNC_BDF_FILES) $(BUILT_BDF_FILES)
 
 EXTRA_DIST = $(BDF_FILES) autogen.sh
+
+all-local: $(BUILT_BDF_FILES) $(font_DATA)
 
 install-data-hook:
 	@rm -f $(DESTDIR)$(fontdir)/fonts.scale
