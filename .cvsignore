@@ -1,0 +1,12 @@
+*.pcf.gz
+clR6x12-ISO8859-*.bdf
+clR6x12-KOI8-*.bdf
+Makefile
+Makefile.in
+aclocal.m4
+autom4te.cache
+config.log
+config.status
+configure
+install-sh
+missing
