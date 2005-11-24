@@ -151,71 +151,71 @@ SUFFIXES = .bdf .pcf.gz t.bdf \
 
 .bdf.pcf.gz:
 	@rm -f $@
-	$(BDFTOPCF) -t $^ | gzip > $@
+	$(BDFTOPCF) -t $< | gzip > $@
 
 .bdft.bdf:
 	@rm -f $@
-	$(PERL) $(BDFTRUNCATE) 0x3200 < $^ > $@
+	$(PERL) $(BDFTRUNCATE) 0x3200 < $< > $@
 
 .bdf-ISO8859-1.bdf:
 	@rm -f $@
-	$(UCS2ANY) $^ $(UTIL_DIR)/map-ISO8859-1 ISO8859-1
+	$(UCS2ANY) $< $(UTIL_DIR)/map-ISO8859-1 ISO8859-1
 
 .bdf-ISO8859-2.bdf:
 	@rm -f $@
-	$(UCS2ANY) $^ $(UTIL_DIR)/map-ISO8859-2 ISO8859-2
+	$(UCS2ANY) $< $(UTIL_DIR)/map-ISO8859-2 ISO8859-2
 
 .bdf-ISO8859-3.bdf:
 	@rm -f $@
-	$(UCS2ANY) $^ $(UTIL_DIR)/map-ISO8859-3 ISO8859-3
+	$(UCS2ANY) $< $(UTIL_DIR)/map-ISO8859-3 ISO8859-3
 
 .bdf-ISO8859-4.bdf:
 	@rm -f $@
-	$(UCS2ANY) $^ $(UTIL_DIR)/map-ISO8859-4 ISO8859-4
+	$(UCS2ANY) $< $(UTIL_DIR)/map-ISO8859-4 ISO8859-4
 
 .bdf-ISO8859-5.bdf:
 	@rm -f $@
-	$(UCS2ANY) $^ $(UTIL_DIR)/map-ISO8859-5 ISO8859-5
+	$(UCS2ANY) $< $(UTIL_DIR)/map-ISO8859-5 ISO8859-5
 
 .bdf-ISO8859-7.bdf:
 	@rm -f $@
-	$(UCS2ANY) $^ $(UTIL_DIR)/map-ISO8859-7 ISO8859-7
+	$(UCS2ANY) $< $(UTIL_DIR)/map-ISO8859-7 ISO8859-7
 
 .bdf-ISO8859-8.bdf:
 	@rm -f $@
-	$(UCS2ANY) $^ $(UTIL_DIR)/map-ISO8859-8 ISO8859-8
+	$(UCS2ANY) $< $(UTIL_DIR)/map-ISO8859-8 ISO8859-8
 
 .bdf-ISO8859-9.bdf:
 	@rm -f $@
-	$(UCS2ANY) $^ $(UTIL_DIR)/map-ISO8859-9 ISO8859-9
+	$(UCS2ANY) $< $(UTIL_DIR)/map-ISO8859-9 ISO8859-9
 
 .bdf-ISO8859-10.bdf:
 	@rm -f $@
-	$(UCS2ANY) $^ $(UTIL_DIR)/map-ISO8859-10 ISO8859-10
+	$(UCS2ANY) $< $(UTIL_DIR)/map-ISO8859-10 ISO8859-10
 
 .bdf-ISO8859-13.bdf:
 	@rm -f $@
-	$(UCS2ANY) $^ $(UTIL_DIR)/map-ISO8859-13 ISO8859-13
+	$(UCS2ANY) $< $(UTIL_DIR)/map-ISO8859-13 ISO8859-13
 
 .bdf-ISO8859-14.bdf:
 	@rm -f $@
-	$(UCS2ANY) $^ $(UTIL_DIR)/map-ISO8859-14 ISO8859-14
+	$(UCS2ANY) $< $(UTIL_DIR)/map-ISO8859-14 ISO8859-14
 
 .bdf-ISO8859-15.bdf:
 	@rm -f $@
-	$(UCS2ANY) $^ $(UTIL_DIR)/map-ISO8859-15 ISO8859-15
+	$(UCS2ANY) $< $(UTIL_DIR)/map-ISO8859-15 ISO8859-15
 
 .bdf-ISO8859-16.bdf:
 	@rm -f $@
-	$(UCS2ANY) $^ $(UTIL_DIR)/map-ISO8859-16 ISO8859-16
+	$(UCS2ANY) $< $(UTIL_DIR)/map-ISO8859-16 ISO8859-16
 
 .bdf-KOI8-R.bdf:
 	@rm -f $@
-	$(UCS2ANY) $^ $(UTIL_DIR)/map-KOI8-R KOI8-R
+	$(UCS2ANY) $< $(UTIL_DIR)/map-KOI8-R KOI8-R
 
 t.bdf.pcf.gz:
 	@rm -f $@
-	$(BDFTOPCF) -t $^ | gzip > $@
+	$(BDFTOPCF) -t $< | gzip > $@
 
 fontdir = @FONTDIR@
 font_DATA = \
