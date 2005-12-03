@@ -35,6 +35,8 @@ AC_PATH_PROG(UCS2ANY, ucs2any)
 AC_PATH_PROG(MKFONTSCALE, mkfontscale)
 AC_PATH_PROG(MKFONTDIR, mkfontdir)
 
+m4_ifdef([AS_HELP_STRING], , [m4_define([AS_HELP_STRING], m4_defn([AC_HELP_STRING]))])
+
 DEFAULT_FONTDIR=${libdir}/X11/fonts/misc
 AC_ARG_WITH(fontdir,
 	AS_HELP_STRING([--with-fontdir=FONTDIR], [Path to install fonts]),
