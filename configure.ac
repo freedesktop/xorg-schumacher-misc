@@ -45,7 +45,7 @@ AC_ARG_WITH(fontdir,
 AC_SUBST(FONTDIR)
 
 PKG_CHECK_MODULES(MAPS, [fontutil])
-MAPFILES_PATH=$(pkg-config --variable=mapdir fontutil)
+MAPFILES_PATH=`$PKG_CONFIG --variable=mapdir fontutil`
 AC_SUBST(MAPFILES_PATH)
 
 XORG_FONT_CHECK_ISO8859_1
