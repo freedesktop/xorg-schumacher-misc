@@ -26,6 +26,9 @@ AC_INIT(font-schumacher-misc, [1.0.0], [https://bugs.freedesktop.org/enter_bug.c
 AM_INIT_AUTOMAKE([foreign dist-bzip2])
 AM_MAINTAINER_MODE
 
+# Require xorg-macros: XORG_CHANGELOG
+m4_ifndef([XORG_MACROS_VERSION], [AC_FATAL([must install xorg-macros 1.2 or later before running autoconf/autogen])])
+XORG_MACROS_VERSION(1.2)
 AC_PROG_INSTALL
 
 AC_PATH_PROGS(PERL, perl perl5)
@@ -41,14 +44,10 @@ if test x"$MKFONTDIR" = x; then
 	AC_MSG_ERROR([mkfontdir is required to build schumacher-misc fonts.])
 fi
 
-
-m4_ifdef([AS_HELP_STRING], , [m4_define([AS_HELP_STRING], m4_defn([AC_HELP_STRING]))])
-
-DEFAULT_FONTDIR=${libdir}/X11/fonts/misc
-AC_ARG_WITH(fontdir,
-	AS_HELP_STRING([--with-fontdir=FONTDIR], [Path to install fonts]),
-	[FONTDIR="$withval"],
-	[FONTDIR="$DEFAULT_FONTDIR"])
+fontdir=${libdir}/X11/fonts/misc
+AC_ARG_WITH(fontdir, AC_HELP_STRING([--with-fontdir=<pathname>],
+	[Path to install fonts]), [fontdir="$withval"])
+FONTDIR="$fontdir"
 AC_SUBST(FONTDIR)
 
 PKG_CHECK_MODULES(MAPS, [fontutil])
@@ -71,5 +70,6 @@ XORG_FONT_CHECK_ISO8859_16
 XORG_FONT_CHECK_KOI8_R
 
 XORG_RELEASE_VERSION
+XORG_CHANGELOG
 
 AC_OUTPUT([Makefile])

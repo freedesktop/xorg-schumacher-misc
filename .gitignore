@@ -11,3 +11,6 @@ configure
 install-sh
 missing
 *~
+font-schumacher-misc-*.tar.*
+ChangeLog
+tags
