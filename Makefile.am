@@ -155,7 +155,7 @@ SUFFIXES = .bdf .pcf.gz t.bdf \
 
 .bdft.bdf:
 	@rm -f $@
-	$(PERL) $(BDFTRUNCATE) 0x3200 < $< > $@
+	$(BDFTRUNCATE) 0x3200 < $< > $@
 
 .bdf-ISO8859-1.bdf:
 	@rm -f $@

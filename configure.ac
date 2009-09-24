@@ -31,7 +31,6 @@ m4_ifndef([XORG_MACROS_VERSION], [AC_FATAL([must install xorg-macros 1.2 or late
 XORG_MACROS_VERSION(1.2)
 AC_PROG_INSTALL
 
-AC_PATH_PROGS(PERL, perl perl5)
 AC_PATH_PROG(BDFTOPCF, bdftopcf)
 AC_PATH_PROG(BDFTRUNCATE, bdftruncate)
 AC_PATH_PROG(UCS2ANY, ucs2any)
