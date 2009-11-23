@@ -253,6 +253,8 @@ CLEANFILES = $(font_DATA) $(TRUNC_BDF_FILES) $(BUILT_BDF_FILES)
 
 EXTRA_DIST = $(BDF_FILES)
 
+MAINTAINERCLEANFILES = ChangeLog INSTALL
+
 all-local: $(BUILT_BDF_FILES) $(font_DATA)
 
 install-data-hook:
